@@ -13,8 +13,7 @@ buzzerMotor = 12
 
 
 """ Log File Logic  """ 
-
-logging.basicConfig(filename="mag.log")
+logging.config.fileConfig(fname='file.conf', disable_existing_loggers=True)
 logging.info("Fish has been fed")
 
 @app.route('/')
@@ -36,7 +35,6 @@ def mag():
         gpio.output(buzzerMotor,False)
         time.sleep(1)  
         return ({"success": "Fish Successfully Fed."})
-
     except Exception as e: 
         print(e)
         return (str(e))
