@@ -16,9 +16,14 @@ def index():
 def mag():
 
     try: 
+       
         gpio.setmode(gpio.BCM)
-        gpio.setwarnings(False)
         gpio.setup(buzzerMotor,gpio.OUT)
+        gpio.output(buzzerMotor, True)
+        time.sleep(.3)
+        gpio.output(buzzerMotor,False)
+        time.sleep(1)
+        
         return ({"success": "Fish Successfully Fed."})
 
     except Exception as e: 
