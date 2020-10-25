@@ -13,7 +13,7 @@ buzzerMotor = 12
 
 
 """ Log File Logic  """ 
-logging.config.fileConfig(fname='file.conf', disable_existing_loggers=True)
+logging.fileConfig(fname='file.conf', disable_existing_loggers=True)
 logging.info("Fish has been fed")
 
 @app.route('/')
