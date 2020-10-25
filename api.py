@@ -18,9 +18,10 @@ def mag():
 
     try:  
         gpio.setmode(gpio.BCM)
-        gpio.output(buzzerMotor,False)
         gpio.setup(buzzerMotor,gpio.OUT)
+        gpio.output(buzzerMotor,False)
         gpio.output(buzzerMotor, True)
+        gpio.setup(buzzerMotor,gpio.OUT)
         time.sleep(.3)
         gpio.output(buzzerMotor,False)
         time.sleep(1)  
