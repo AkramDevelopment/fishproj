@@ -27,7 +27,7 @@ def mag():
         time.sleep(.3)
         gpio.output(buzzerMotor,False)
         time.sleep(1)  
-        return (redirect(url_for(index)))
+        return (redirect(url_for('index')))
     except Exception as e: 
         print(e)
         return (str(e))
