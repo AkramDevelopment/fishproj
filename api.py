@@ -23,9 +23,5 @@ def mag():
 
     except Exception as e: 
         print(e)
-        return ( e)
-
-
-    return ("This is a post request")
-
+        return (str(e))
 app.run(debug=True)
