@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 import logging
 import time
 import RPi.GPIO as gpio
@@ -27,7 +27,7 @@ def mag():
         time.sleep(.3)
         gpio.output(buzzerMotor,False)
         time.sleep(1)  
-        return ({"success": "Fish Successfully Fed."})
+        return (redirect(url_for('/')))
     except Exception as e: 
         print(e)
         return (str(e))
