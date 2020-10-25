@@ -17,8 +17,8 @@ def index():
 def mag():
 
     try:  
-        gpio.output(buzzerMotor,False)
         gpio.setmode(gpio.BCM)
+        gpio.output(buzzerMotor,False)
         gpio.setup(buzzerMotor,gpio.OUT)
         gpio.output(buzzerMotor, True)
         time.sleep(.3)
