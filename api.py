@@ -22,7 +22,8 @@ def mag():
         return ({"success": "Fish Successfully Fed."})
 
     except Exception as e: 
-        return ({"error": e})
+        print(e)
+        return ( e)
 
 
     return ("This is a post request")
