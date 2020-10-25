@@ -6,15 +6,8 @@ import csv
 
 
 app = Flask(__name__, template_folder='templates')
-
-
 buzzerMotor = 12
 
-
-
-""" Log File Logic  """ 
-logging.fileConfig(fname='file.conf', disable_existing_loggers=True)
-logging.info("Fish has been fed")
 
 @app.route('/')
 def index():
