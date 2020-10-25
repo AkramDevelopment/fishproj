@@ -1,11 +1,21 @@
 from flask import Flask,render_template,request
+import logging
 import time
 import RPi.GPIO as gpio
+import csv
 
 
 app = Flask(__name__, template_folder='templates')
 
+
 buzzerMotor = 12
+
+
+
+""" Log File Logic  """ 
+
+logging.basicConfig(filename="mag.log")
+logging.info("Fish has been fed")
 
 @app.route('/')
 def index():
@@ -30,4 +40,6 @@ def mag():
     except Exception as e: 
         print(e)
         return (str(e))
+
+
 app.run(debug=True)
