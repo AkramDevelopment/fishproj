@@ -7,6 +7,30 @@ import csv
 
 app = Flask(__name__, template_folder='templates')
 buzzerMotor = 12
+button  = 16 
+
+
+
+gpio.setup(button,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+gpio.setup(buzzer_motor, gpio.OUT)
+
+try:
+
+    while True: 
+
+        if gpio.input(16):
+
+            print("Button Activated")
+        else:
+
+            print("no")
+except: 
+
+    print("There was an error with the code GET TO DEBUGGIGN")
+
+
+
+
 
 
 @app.route('/')
