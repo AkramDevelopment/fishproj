@@ -9,6 +9,7 @@ app = Flask(__name__, template_folder='templates')
 buzzerMotor = 12
 
 
+
 @app.route('/')
 def index():
 
@@ -34,3 +35,16 @@ def mag():
 
 
 app.run(debug=True)
+
+while app.run == True: 
+
+    gpio.setwarnings(False) # Ignore warning for now
+    gpio.setmode(gpio.BOARD) # Use physical pin numbering
+    gpio.setup(16, gpio.IN, pull_up_down=gpio.PUD_DOWN) #Button pin
+
+    if gpio.input(16) == gpio.HIGH:
+
+        print("button pushed")
+
+
+    
