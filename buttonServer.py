@@ -12,11 +12,12 @@ try:
     while True:
 
         button = gpio.input(16)
-        if button == True:
+        if button == False:
             print("Button pressed, fiannly be workin")
 
 
 except Exception as e:
+    gpio.cleanup()
     print(e)
     
 
