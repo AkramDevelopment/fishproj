@@ -10,7 +10,14 @@ buzzerMotor = 12
 
 
 def button_callback(channel): 
-
+    gpio.setmode(gpio.BCM)
+    gpio.setup(buzzerMotor,gpio.OUT)
+    gpio.output(buzzerMotor,False)
+    gpio.output(buzzerMotor, True)
+    gpio.setup(buzzerMotor,gpio.OUT)
+    time.sleep(.3)
+    gpio.output(buzzerMotor,False)
+    time.sleep(1)  
     print("Button was pushed")
 
  
