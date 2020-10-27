@@ -8,33 +8,6 @@ import csv
 
 app = Flask(__name__, template_folder='templates')
 buzzerMotor = 12
-button  = 16 
-
-
-
-
-
-gpio.setwarnings(False) # Ignore warning for now
-gpio.setmode(gpio.BOARD) # Use physical pin numbering
-gpio.setup(button, gpio.IN, pull_up_down=gpio.PUD_DOWN)
-
-
-def pull_lever():
-
-    gpio.setmode(gpio.BCM)
-    gpio.setup(buzzerMotor,gpio.OUT)
-    gpio.output(buzzerMotor,False)
-    gpio.output(buzzerMotor, True)
-    gpio.setup(buzzerMotor,gpio.OUT)
-    time.sleep(.3)
-    gpio.output(buzzerMotor,False)
-    time.sleep(1)
-    print("success")
-    return ({"success": "Fish are beeing fed, they are full!"})
-
-btn = Button(15)
-btn.when_pressed = pull_lever()
-
 
 
 @app.route('/')
