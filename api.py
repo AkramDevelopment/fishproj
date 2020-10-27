@@ -9,24 +9,6 @@ app = Flask(__name__, template_folder='templates')
 buzzerMotor = 12
 
 
-def button_callback(channel): 
-    gpio.setmode(gpio.BCM)
-    gpio.setup(buzzerMotor,gpio.OUT)
-    gpio.output(buzzerMotor,False)
-    gpio.output(buzzerMotor, True)
-    gpio.setup(buzzerMotor,gpio.OUT)
-    time.sleep(.3)
-    gpio.output(buzzerMotor,False)
-    time.sleep(1)  
-    print("Button was pushed")
-
- 
-gpio.setwarnings(False)
-gpio.setmode(gpio.BOARD)
-gpio.setup(16,gpio.IN,pull_up_down=gpio.PUD_DOWN)
-
-gpio.add_event_detect(16,gpio.RISING,callback=button_callback())
-
 @app.route('/')
 def index():
 
