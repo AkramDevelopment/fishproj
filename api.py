@@ -1,5 +1,4 @@
 from flask import Flask,render_template,request,redirect,url_for
-from gpiozero import Button
 import logging
 import time
 import RPi.GPIO as gpio
