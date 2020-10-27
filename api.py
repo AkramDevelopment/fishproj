@@ -32,7 +32,7 @@ def pull_lever():
     print("success")
     return ({"success": "Fish are beeing fed, they are full!"})
 
-btn = Button(16)
+btn = Button(15)
 btn.when_pressed = pull_lever()
 
 
