@@ -36,7 +36,7 @@ def mag():
 
 app.run(debug=True)
 
-while app.run == True: 
+while app.run(): 
 
     gpio.setwarnings(False) # Ignore warning for now
     gpio.setmode(gpio.BOARD) # Use physical pin numbering
