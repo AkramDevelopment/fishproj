@@ -1,5 +1,6 @@
 import requests
 import RPi.GPIO as gpio
+import time
 
 gpio.setwarnings(False)
 gpio.setmode(gpio.BOARD)
@@ -12,12 +13,12 @@ try:
     while True:
 
         button = gpio.input(36)
-        if button == False:
-            print("Button pressed, fiannly be working")
-            button = True
+
+        if  button == False:
+
+            print('button pressed')
+            time.sleep(0.4)
 
 except Exception as e:
-    gpio.cleanup()
-    print(e)
-    
 
+    print(e)
