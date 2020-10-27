@@ -11,7 +11,7 @@ button  = 16
 
 
 
-gpio.setup(button,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+gpio.setup(button,gpio.IN, pull_up_down = gpio.PUD_UP)
 gpio.setup(buzzer_motor, gpio.OUT)
 
 try:
