@@ -10,13 +10,13 @@ buzzerMotor = 12
 button  = 16 
 
 
-
-gpio.setup(button,gpio.IN)
-gpio.setup(buzzer_motor, gpio.OUT)
+gpio.setwarnings(False) # Ignore warning for now
+gpio.setmode(gpio.BOARD) # Use physical pin numbering
+gpio.setup(button, gpio.IN, pull_up_down=gpio.PUD_DOWN)
 
 try:
     while True: 
-        if gpio.input(16):
+        if gpio.input(button):
 
             print("Button Activated")
         else:
