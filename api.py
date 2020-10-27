@@ -15,7 +15,7 @@ def button_callback(channel):
 
  
 gpio.setwarnings(False)
-gpio.setmode(gpio.board)
+gpio.setmode(gpio.BOARD)
 gpio.setup(16,gpio.IN,pull_up_down=gpio.PUD_DOWN)
 
 gpio.add_event_detect(16,gpio.RISING,callback=button_callback)
