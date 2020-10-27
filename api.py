@@ -11,13 +11,11 @@ button  = 16
 
 
 
-gpio.setup(button,gpio.IN, pull_up_down = gpio.PUD_UP)
+gpio.setup(button,gpio.IN)
 gpio.setup(buzzer_motor, gpio.OUT)
 
 try:
-
     while True: 
-
         if gpio.input(16):
 
             print("Button Activated")
@@ -25,7 +23,6 @@ try:
 
             print("no")
 except: 
-
     print("There was an error with the code GET TO DEBUGGIGN")
 
 
