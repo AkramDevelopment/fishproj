@@ -7,7 +7,6 @@ gpio.setmode(gpio.BOARD)
 gpio.setup(36,gpio.IN,pull_up_down=gpio.PUD_UP)
 
 
-
 try:
 
     while True:
@@ -17,7 +16,7 @@ try:
         if  button == False:
 
             print('button pressed')
-            requests.get('https://localhost:5000/feeder')
+            requests.get('http://localhost:5000/feeder')
             time.sleep(0.4)
 
 except Exception as e:
