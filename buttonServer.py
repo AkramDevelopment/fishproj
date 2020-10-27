@@ -14,6 +14,7 @@ try:
         button = gpio.input(36)
         if button == False:
             print("Button pressed, fiannly be working")
+            button = False
 
 except Exception as e:
     gpio.cleanup()
