@@ -25,7 +25,7 @@ gpio.setwarnings(False)
 gpio.setmode(gpio.BOARD)
 gpio.setup(16,gpio.IN,pull_up_down=gpio.PUD_DOWN)
 
-gpio.add_event_detect(16,gpio.RISING,callback=button_callback)
+gpio.add_event_detect(16,gpio.RISING,callback=button_callback())
 
 @app.route('/')
 def index():
