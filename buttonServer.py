@@ -17,6 +17,7 @@ try:
         if  button == False:
 
             print('button pressed')
+            requests.get('https://localhost:5000/feeder')
             time.sleep(0.4)
 
 except Exception as e:

@@ -15,6 +15,26 @@ def index():
     return (render_template('mainPage.html'))
 
 
+
+@app.route("/feeder")
+def feeder():
+
+    try:  
+        gpio.setmode(gpio.BCM)
+        gpio.setup(buzzerMotor,gpio.OUT)
+        gpio.output(buzzerMotor,False)
+        gpio.output(buzzerMotor, True)
+        gpio.setup(buzzerMotor,gpio.OUT)
+        time.sleep(.3)
+        gpio.output(buzzerMotor,False)
+        time.sleep(1)  
+        return (redirect(url_for('index')))
+    except Exception as e: 
+        print(e)
+        return (str(e))
+
+
+
 @app.route('/mag')
 def mag():
 
